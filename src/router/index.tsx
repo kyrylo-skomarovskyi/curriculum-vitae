@@ -1,7 +1,7 @@
 import { createBrowserRouter, Outlet } from 'react-router'
 import { ROUTE_PATH } from '../constants/route-paths.ts';
-import { AuthRoute } from './AuthRoute.tsx';
-import { ProtectedRoute } from './ProtectedRoute.tsx';
+import { AuthRoute } from './auth-route.tsx';
+import { ProtectedRoute } from './protected-route.tsx';
 
 const router = createBrowserRouter([
   {
