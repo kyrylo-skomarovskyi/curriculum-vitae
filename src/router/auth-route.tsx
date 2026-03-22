@@ -1,21 +1,21 @@
-import { type PropsWithChildren } from 'react'
-import { Navigate } from 'react-router'
-import { useAuth } from '../contexts/auth-context.tsx'
+import { type PropsWithChildren } from 'react';
+import { Navigate } from 'react-router';
+import { useAuth } from '../contexts/auth-context.tsx';
 
 type AuthRouteProps = PropsWithChildren<{
-  redirectTo: string
-}>
+  redirectTo: string;
+}>;
 
 export function AuthRoute({ children, redirectTo }: AuthRouteProps) {
-  const { user, loading } = useAuth()
+  const { user, loading } = useAuth();
 
   if (loading) {
-    return null
+    return null;
   }
 
   if (user) {
-    return <Navigate to={redirectTo} replace />
+    return <Navigate to={redirectTo} replace />;
   }
 
-  return children
+  return children;
 }

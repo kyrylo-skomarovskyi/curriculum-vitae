@@ -1,4 +1,4 @@
-import { createBrowserRouter, Outlet } from 'react-router'
+import { createBrowserRouter, Outlet } from 'react-router';
 import { ROUTE_PATH } from '../constants/route-paths.ts';
 import { AuthRoute } from './auth-route.tsx';
 import { ProtectedRoute } from './protected-route.tsx';
@@ -28,11 +28,11 @@ const router = createBrowserRouter([
       },
       {
         path: ROUTE_PATH.projects,
-        element: <div>Projects Page</div>
+        element: <div>Projects Page</div>,
       },
       {
         path: ROUTE_PATH.project,
-        element: <div>Project Page</div>
+        element: <div>Project Page</div>,
       },
       {
         path: ROUTE_PATH.createProject,
@@ -52,6 +52,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-])
+]);
 
-export default router
+export default router;
