@@ -1,44 +1,51 @@
 import { createBrowserRouter, Outlet } from 'react-router';
+import { AsideLayout } from '@/components/aside-layout';
 import { ROUTE_PATH } from '../constants/route-paths.ts';
 import { AuthRoute } from './auth-route.tsx';
 import { ProtectedRoute } from './protected-route.tsx';
+import {
+  CreateProjectPage,
+  EditProjectPage,
+  HomePage,
+  LoginPage,
+  ProjectPage,
+  ProjectsPage
+} from './pages.tsx';
 
 const router = createBrowserRouter([
   {
     path: ROUTE_PATH.login,
     element: (
       <AuthRoute redirectTo={ROUTE_PATH.home}>
-        <div>Login Page</div>
+        <LoginPage />
       </AuthRoute>
     ),
   },
   {
     element: (
-      <div>
-        <div>Layout</div>
-
+      <AsideLayout>
         <Outlet />
-      </div>
+      </AsideLayout>
     ),
     children: [
       {
         path: ROUTE_PATH.home,
-        element: <div>Home Page</div>,
+        element: <HomePage />,
         index: true,
       },
       {
         path: ROUTE_PATH.projects,
-        element: <div>Projects Page</div>,
+        element: <ProjectsPage />,
       },
       {
         path: ROUTE_PATH.project,
-        element: <div>Project Page</div>,
+        element: <ProjectPage />,
       },
       {
         path: ROUTE_PATH.createProject,
         element: (
           <ProtectedRoute redirectTo={ROUTE_PATH.projects}>
-            <div>Create Project Page</div>
+            <CreateProjectPage />
           </ProtectedRoute>
         ),
       },
@@ -46,7 +53,7 @@ const router = createBrowserRouter([
         path: ROUTE_PATH.editProject,
         element: (
           <ProtectedRoute redirectTo={ROUTE_PATH.projects}>
-            <div>Edit Project Page</div>
+            <EditProjectPage />
           </ProtectedRoute>
         ),
       },
