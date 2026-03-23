@@ -9,7 +9,7 @@ import {
   HomePage,
   LoginPage,
   ProjectPage,
-  ProjectsPage
+  ProjectsPage,
 } from './pages.tsx';
 
 const router = createBrowserRouter([
