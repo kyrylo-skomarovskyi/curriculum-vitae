@@ -1,6 +1,6 @@
 import { type PropsWithChildren } from 'react';
 import { Navigate } from 'react-router';
-import { useAuth } from '../contexts/auth-context';
+import { useAuth } from '@/contexts/auth-context';
 
 type AuthRouteProps = PropsWithChildren<{
   redirectTo: string;

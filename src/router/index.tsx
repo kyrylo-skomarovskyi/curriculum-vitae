@@ -1,6 +1,6 @@
 import { createBrowserRouter, Outlet } from 'react-router';
 import { AsideLayout } from '@/components/aside-layout';
-import { ROUTE_PATH } from '../constants/route-paths.ts';
+import { ROUTE_PATH } from '@/constants/route-paths.ts';
 import { AuthRoute } from './auth-route.tsx';
 import { ProtectedRoute } from './protected-route.tsx';
 import {
