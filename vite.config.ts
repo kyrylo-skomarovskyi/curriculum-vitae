@@ -6,6 +6,7 @@ import { resolve } from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/curriculum-vitae/',
   plugins: [tailwindcss(), react(), babel({ presets: [reactCompilerPreset()] })],
   resolve: {
     alias: {
