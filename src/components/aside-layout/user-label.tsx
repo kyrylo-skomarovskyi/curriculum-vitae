@@ -8,7 +8,7 @@ function UserLabelContent() {
     return (
       <>
         <Skeleton className="h-4" />
-        <Skeleton className="h-3.5 mt-0.5 w-2/3" />
+        <Skeleton className="mt-0.5 h-3.5 w-2/3" />
       </>
     );
   }
@@ -16,7 +16,7 @@ function UserLabelContent() {
   return (
     <>
       <span className="truncate font-medium">{user?.displayName ?? 'Unknown'}</span>
-      <span className="truncate text-xs text-muted-foreground min-h-4">{user?.email}</span>
+      <span className="text-muted-foreground min-h-4 truncate text-xs">{user?.email}</span>
     </>
   );
 }
