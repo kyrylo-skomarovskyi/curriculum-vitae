@@ -12,7 +12,7 @@ import { UserLabel } from './user-label.tsx';
 import { NavMain } from './nav-main.tsx';
 import { NavUser } from './nav-user.tsx';
 
-export function AppSidebar() {
+export default function AppSidebar() {
   return (
     <>
       <SidebarHeader>
