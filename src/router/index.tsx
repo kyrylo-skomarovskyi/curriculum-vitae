@@ -1,4 +1,4 @@
-import { createBrowserRouter, Outlet } from 'react-router';
+import { createBrowserRouter, Outlet, type UIMatch } from 'react-router';
 import { AsideLayout } from '@/components/aside-layout';
 import { ROUTE_PATH } from '@/constants/route-paths.ts';
 import { AuthRoute } from './auth-route.tsx';
@@ -33,14 +33,27 @@ const router = createBrowserRouter(
           path: ROUTE_PATH.home,
           element: <HomePage />,
           index: true,
+          handle: {
+            title: () => 'Summary',
+          },
         },
         {
           path: ROUTE_PATH.projects,
           element: <ProjectsPage />,
+          handle: {
+            title: () => 'Projects',
+          },
         },
         {
           path: ROUTE_PATH.project,
           element: <ProjectPage />,
+          handle: {
+            title: ({ params }: UIMatch) => {
+              const { projectId } = params;
+
+              return `Project ${projectId}`;
+            },
+          },
         },
         {
           path: ROUTE_PATH.createProject,
@@ -49,6 +62,9 @@ const router = createBrowserRouter(
               <CreateProjectPage />
             </ProtectedRoute>
           ),
+          handle: {
+            title: () => 'Create Project',
+          },
         },
         {
           path: ROUTE_PATH.editProject,
@@ -57,6 +73,13 @@ const router = createBrowserRouter(
               <EditProjectPage />
             </ProtectedRoute>
           ),
+          handle: {
+            title: ({ params }: UIMatch) => {
+              const { projectId } = params;
+
+              return `Edit Project ${projectId}`;
+            },
+          },
         },
       ],
     },
