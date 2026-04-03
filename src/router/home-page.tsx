@@ -8,13 +8,15 @@ export default function HomePage() {
 
   if (isLoading) {
     return (
-      <div className="space-y-4 p-6">
-        <Skeleton className="h-4 w-64" />
-        <Skeleton className="h-4 w-64" />
+      <div className="max-w-2xl space-y-2">
+        <Skeleton className="h-8 w-54" />
+        <Skeleton className="h-7 w-50" />
+        <Skeleton className="h-4 w-full" />
+        <Skeleton className="h-4 w-full" />
         <Skeleton className="h-4 w-full" />
         <Skeleton className="h-4 w-3/4" />
         <Skeleton className="h-4 w-3/4" />
-        <Skeleton className="h-4 w-3/4" />
+        <Skeleton className="h-4 w-2/3" />
       </div>
     );
   }
@@ -40,9 +42,11 @@ export default function HomePage() {
   }
 
   return (
-    <div className="px-6">
-      <h1>{data.fullName}</h1>
-      <h2>{data.title}</h2>
+    <div className="max-w-2xl space-y-2">
+      <h1 className="text-2xl">{data.fullName}</h1>
+
+      <h2 className="text-muted-foreground text-lg">{data.title}</h2>
+
       <p>{data.summary}</p>
     </div>
   );
