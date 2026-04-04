@@ -7,7 +7,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/curriculum-vitae/',
+  base: '/curriculum-vitae',
   plugins: [
     tailwindcss(),
     react(),
