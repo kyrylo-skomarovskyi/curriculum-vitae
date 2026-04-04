@@ -17,7 +17,7 @@ function AppSidebarFallback() {
 export function AsideLayout({ children }: PropsWithChildren) {
   return (
     <SidebarProvider style={SIDEBAR_STYLE}>
-      <Sidebar variant="inset" collapsible="offcanvas">
+      <Sidebar collapsible="icon">
         <Suspense fallback={<AppSidebarFallback />}>
           <AppSidebar />
         </Suspense>
